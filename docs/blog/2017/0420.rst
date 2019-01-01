@@ -1,0 +1,15 @@
+:date: 2017-04-20
+
+========================
+Thursday, April 20, 2017
+========================
+
+Exercise
+=========
+
+Haven't been training at all for the past year really, I rather not become the stereotypical new father who puts on
+several kgs and never works out again.
+
+To combat this, I wrote a small bash script:
+
+for i in `seq 1 10`; do espeak "Time To Do 5 Pushups"; sleep 3; for x in `seq 1 5`; do espeak hop; sleep .5; espeak $x; sleep .5; done; espeak "good job"; sleep 180; done

@@ -1,0 +1,39 @@
+:date: 2017-03-30
+
+========================
+Thursday, March 30, 2017
+========================
+
+Sphinx
+======
+Looks like the view sourse on luc's blog works only when he's committed the docs to the git repo.
+So I can use it as reference, but only on older posts.
+
+Also learned the correct way to link to a ticket.
+::
+
+    :ticket:`1597`
+
+Renders to:
+
+:ticket:´1597´
+
+So I went back and fixed the markup for my olders posts.
+
+However another problem, rst markup uses the ` not ' or ", and ` is being used for my guake shortcut.
+Looks af if this is somewhat of a usual problem with other keyboards and the back-tick `See <http://http://docutils.sourceforge.net/FAQ.html#how-can-i-generate-backticks-using-a-scandinavian-keyboard/>`_
+
+I moved my guake shortcut to f3 inorder to be able to type '`'. Another option is the use::
+
+    ctrl + shift + u 60
+
+
+Calender server
+===============
+
+issue :ticket:``
+
+With getting radicale working lino the core thing must work is that user's calenders must be updated when lino
+exports them into radicale's filesystem. If they don't or are incompatible, then we're boned.
+
+First thing

@@ -1,0 +1,62 @@
+:date: 2017-04-05
+
+========================
+Wednesday, April 5, 2017
+========================
+
+git branches
+============
+:ticket:`1672`
+
+After a bit of back and forth with Luc we decided that the best way to have unique travis install scrips is to have
+seperate requirements.txt files and have travis to a compaireison to the env variable $TRAVIS_BRANCH that is the name
+of the current branch or the branch you are pull-requesting into. And if there is a requirements.txt for that branch use
+it, otherwise use the master requirements.txt ::
+
+    $ test -e "requirements.$TRAVIS_BRANCH.txt" && pip install -r "requirements.$TRAVIS_BRANCH.txt" || pip install -r requirements.txt
+
+The other options were to use sed to replace a git url to point to the current branch::
+
+    $ sed "s/{BRANCH}/$TRAVIS_BRANCH/" requirements.txt > requirements.use.txt
+    $ pip install -r equirements.use.txt
+
+or to try to have git keep unique files on each branch. After some reading this feature isn't supported by git.
+There are some workarounds using a .gitattributes file and stating that the default merge policy for a file is to keep
+the current one.
+However this fails in the long run because you can never have fast-forwards and git-kraken didn't attempt to use the
+.gitattributes file
+
+Bash
+====
+The use of test and sed got me interested in learning some more bash skills. So here are some usless commands I wrote up::
+
+    $ # Locates all txt files, looks to see if they contain the word 'Mars' (case insensitive), then does a stream edit on them to replace mars with Pluto and write the file to $file.tmp
+    $for file in $(grep -li "Mars" $(locate -w $(pwd)*/*.txt)); do sed "s/Mars/Pluto/" $file > "$file.tmp"; done
+
+I can also do the same command using sponge to write to the same file if I have moreutils installed::
+
+    $for file in $(grep -li "Mars" $(locate -w $(pwd)*/*.txt)); do sed "s/Mars/Pluto/" $file | sponge $file; done
+
+One key thing that I found confusing with bash scripting is; unlike python " and ' are different::
+
+    $ NAME = Tonis
+    sh: 1: NAME: not found
+    $ NAME=Tonis
+    $ NAME
+    sh: 3: NAME: not found
+    $ $NAME
+    sh: 4: Tonis: not found
+    $ echo $NAME "$NAME" '$NAME'
+    Tonis Tonis $NAME
+    $ echo $NAME "$NAME" '$NAME' $($NAME))
+    sh: 6: Syntax error: ")" unexpected
+    $ echo $NAME "$NAME" '$NAME' $($NAME)
+    sh: 6: Tonis: not found
+    Tonis Tonis $NAME
+    $ pwd
+    /home/tonis
+    $ echo $NAME "$NAME" '$NAME' $(pwd)
+    Tonis Tonis $NAME /home/tonis
+    $
+
+

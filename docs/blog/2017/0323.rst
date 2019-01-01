@@ -1,0 +1,8 @@
+:date: 2017-03-23
+
+========================
+Thursday, March 23, 2017
+========================
+
+Made a new doc file for lino.xl.mailbox.
+

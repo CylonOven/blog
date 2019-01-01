@@ -1,0 +1,29 @@
+:date: 2018-08-25
+
+=========================
+Saturday, August 25, 2018
+=========================
+
+Mystery disks
+=============
+
+both sdh anf sdi are refusing to mount.
+Any attempt to mount were met with a drive or mountpoint busy error.
+
+df, fdisk -l, gparted gave no usful info what was thw issue.
+
+however lsblk said that those two drives had raid configuratuons.
+
+`dmraid -r confirmed this.`
+
+https://www.slac.stanford.edu/grp/cd/soft/unix/RAIDmetadata.html
+
+was helpful in solving the issue.
+
+`dmraid -r -E /dev/sdi and sdh`
+
+gave the same error as in the above link.
+
+`dmraid -E remove /dev/maper/ddfq\_...`
+
+One other command I learned is `fuser` for seeing whos locking a file or device.

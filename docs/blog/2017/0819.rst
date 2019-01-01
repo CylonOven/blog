@@ -1,0 +1,15 @@
+4:date: 2017-08-19
+
+=========================
+Saturday, August 19, 2017
+=========================
+
+Today we visited Muhu since Siiri had a wedding she had to shoot there.
+I looked into the chooser for timezone on jane. There is a bug there
+that is allowing invalid values to be passed, as well as now allowing me
+to search past the first page.
+
+Also I had a go at one of projecteuler problems, #61.
+Took me ~2 hours to code a solution. https://projecteuler.net/problem=61
+
+This weekend I'm going to add it to my Squish Git.

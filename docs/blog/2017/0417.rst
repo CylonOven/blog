@@ -1,0 +1,31 @@
+:date: 2017-04-17
+
+======================
+Monday, April 17, 2017
+======================
+
+
+Vote Summary
+============
+Looked into how lino generates it's workflow_buttons.
+
+I updated the get_slave_summary for votes so that the action buttons for the acted user also apear on the summary.
+However this caused the start session action along with edit vote button to apear as well as the state_change actions.
+
+I decided that I would look at how they are generated in get_workflow_buttons, and copy it to my needs rather than my
+other idea of having another parameter to get_workflow_buttons for showing only state_change actions.
+
+Courses
+=======
+
+Not seeing MyEnrolments table showing up in jane.
+I added it to the menu-bar. And this led me down a debugging run of the table.
+I had incorrectly set-up the new parameter and default parameter value, which caused some unusual errors.
+
+Comments Via Workflow
+=====================
+
+After learning how the workflow buttons work I was able to add another button to insert a new comment into the workflow
+actions field. I rather like the result.
+
+

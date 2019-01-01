@@ -1,0 +1,55 @@
+:date: 2018-02-19
+
+=========================
+Monday, February 19, 2018
+=========================
+
+
+ImportError: No module named invlib.ns
+======================================
+
+Fixed an issue I was having with Atelier::
+
+    ==== cosi ====
+    X11 forwarding request failed on channel 0
+    remote: Counting objects: 6, done.
+    remote: Total 6 (delta 5), reused 6 (delta 5), pack-reused 0
+    Unpacking objects: 100% (6/6), done.
+    From github.com:lino-framework/cosi
+       e939308..58f382a  master     -> origin/master
+    Updating e939308..58f382a
+    Fast-forward
+     lino_cosi/lib/b2c/models.py | 2 +-
+     1 file changed, 1 insertion(+), 1 deletion(-)
+    Traceback (most recent call last):
+      File "/home/tonis/Projects/lino/2.7/bin/per_project", line 6, in <module>
+        exec(compile(open(__file__).read(), __file__, 'exec'))
+      File "/home/tonis/Projects/lino/src/atelier/scripts/per_project", line 28, in <module>
+        def main(voice=False, start=None, after=None, until=None, showlist=False, *cmd):
+      File "/home/tonis/Projects/lino/2.7/local/lib/python2.7/site-packages/argh/dispatching.py", line 306, in dispatch_command
+        dispatch(parser, *args, **kwargs)
+      File "/home/tonis/Projects/lino/2.7/local/lib/python2.7/site-packages/argh/dispatching.py", line 174, in dispatch
+        for line in lines:
+      File "/home/tonis/Projects/lino/2.7/local/lib/python2.7/site-packages/argh/dispatching.py", line 277, in _execute_command
+        for line in result:
+      File "/home/tonis/Projects/lino/2.7/local/lib/python2.7/site-packages/argh/dispatching.py", line 260, in _call
+        result = function(*positional, **keywords)
+      File "/home/tonis/Projects/lino/src/atelier/scripts/per_project", line 67, in main
+        prj.load_tasks()
+      File "/home/tonis/Projects/lino/src/atelier/atelier/projects.py", line 184, in load_tasks
+        exec(f.read(), m)
+      File "<string>", line 1, in <module>
+    ImportError: No module named invlib.ns
+
+Seems that Luc did some refactoring and moved the invlib.ns module out of the lino package and into atelier,
+He updated the tasks.py files for all his repos, but he missed some which I still had floating around: Riche and Presto.
+
+To fix it all I had to do was update the tasks.py file::
+
+    # lino.invlib.ns import ns #Wrong
+    from atelier.invlib.ns import ns #Right
+
+
+Now `pp -l` works along with `pp git pull`.
+
+

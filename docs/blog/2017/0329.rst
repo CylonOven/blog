@@ -1,0 +1,56 @@
+:date: 2017-03-29
+
+=========================
+Wednesday, March 29, 2017
+=========================
+
+After not being able to build the docs I decided to work on my dev-env script.
+The goal of the script is to make a working development environment from scratch including the virtualenv.
+
+I've added it to lino's bash script dir.
+
+It doesn't add anything to the users .bashrc or .profile.
+Ideally I would like it to tell the user to add an include statment to their bashrc or atleir, but if the user has
+several projects this isn't ideal. For not this works. One other possible solution is to just echo some lines that could be added.
+
+The reason for this was test an error I was having when building docs :ticket:`1623`
+
+This also fixed an issue I was having where at the start of every lino-server it printed some info including hte pid of the python process.
+
+
+Sphinx
+======
+
+Worked on getting the docs building.
+Main issues were a missing dependencys and a missing index for noi outlined in :ticket:`1641`
+There were also problems building for presto and avanti, but these I'm not going to worry about for now.
+
+I would like to next test the build script against a clean install of debian, but that's not important.
+
+
+Calender Server
+===============
+
+Progress with designing the Calender server for lino.
+I believe that the best way is to have a scheduled method for exporting each users calender as an icalender that Radicale
+reads and serves to users in read-only mode.
+
+For auth it's a bit tricky.
+
+Either we need to use a https post to validate or have a Htpasswd file, or extend radicale with a custom Auth method.
+
+Mailbox
+=======
+
+Not much progress here.
+
+There some ideas of what problems there are and some ideas of how to fix them, but as if yet I haven't tackled them.
+
+Firstly I need to update the detail-layouts for messages for better reviewing.
+
+Also need to setup a cron-job for spam learning as well as putting a header condition into the server.
+Right now there's several spam messages in the DB.
+
+I wonder if it's possible to have an action button in the messages table for inserting a new pointer...
+
+I'll focus on this as much as I can tomorrow so I have something to talk to luc about other than sphinx and calenders.

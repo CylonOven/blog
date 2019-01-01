@@ -1,0 +1,30 @@
+:date: 2017-08-29
+
+========================
+Tuesday, August 29, 2017
+========================
+
+Lino Extjs & CSS
+----------------
+Finally got the CSS and of a disabled detail looking proper when viewed
+by a basic user. Sadly I couldn't change the background color of the
+Detail field, since it's an iframe that contains another document.
+
+That's quite a hard to to fix, perhaps a way to denote that it's
+disalbed is hiding the toolbar?
+
+The DXM100 and sockets.
+-----------------------
+Spent most of my time creating an API for the DXM100's TCP connection.
+
+I'm rather happy with what's writen.
+
+Eric was confused as to why everything were class methods. But I'm
+thinking the api might be instantiated with a MNID, that way it's clear
+or not if that DXM is setup correctly for TCP connections ,rather then
+just returning False for each request.
+
+Also it might be useful to have a way to send several requests on a
+single conneciton. However this is not important.
+
+Eric just needs to get the UI to update nicely and that's it.

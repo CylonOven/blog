@@ -1,0 +1,56 @@
+:date: 2017-04-19
+
+=========================
+Wednesday, April 19, 2017
+=========================
+
+
+Mysql in Python with peewee
+===========================
+
+Yesterday my old friend Eric from the states called me and asked if I had any experience with mysql in python.
+Mostly I've played with MongoDB and sqlite, and sql much less.
+
+What he's doing is making a web-app for monitoring temperature sensors, he is not using a full stack framework,
+and currently doesn't have a backend framework.
+
+All he needs a basic python API that will iterate through the one to many relationships.
+
+user <- farm -< zone -< device <- sensor <- readings.
+
+As well as a way to insert data into the DB, he doesn't know what form the data will come in as, either several readings
+at once, or one at a time.
+
+I decided I'd help a little for my own sake as well as his and see what's the simplest way to do this.
+
+I found the python package peewee which is a lightweight alternative of SqlAlchemy.
+
+After playing around with it, making some models and creating some dummy data, I find myself preferring django/lino,
+at least in the way of model definitions.
+
+pass
+====
+
+Since I installed mysql on my PC and added a root account, and since I always forget my mysql passwords in the past I
+decided to get `Pass <https://www.passwordstore.org/>`__ up and running, which was more confusing then I expected since
+the manual didn't cover well what needs to be done with gpg in order to encrypt your passwords.::
+
+    gpg --gen-key
+    gpg2 --import ~/.gnupg/secring.gpg
+    pass init [key ID]
+
+    pass generate pluto/mysql/root
+        181712319528-
+    pass insert tonis/lino/
+    pass tonis/lino/
+
+Annoyingly it doesn't stated which gpg it used either. But anyway, now I have a password manager.
+Luc and I might want at some point to get it working with git and have a shared password store, however that's not an
+important issue.
+
+Fashion show
+============
+
+I also modeled at TTK's student fashion show.
+Walking the cat-walk is quite the experience. I didn't have the greatest posture in the end, but none the less it was fun.
+Got some candy for my trouble as well.

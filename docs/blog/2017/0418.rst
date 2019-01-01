@@ -1,0 +1,74 @@
+bd :date: 2017-04-18
+
+=======================
+Tuesday, April 18, 2017
+=======================
+
+Did an update on jane.
+
+Make new :ticket:`1777`
+
+Referable tickets and courses
+=============================
+:ticket:`1732` :ticket:`1691`
+
+I added the mixin.refferable to tickets and make a new table that lists tickets that have a ref.
+
+One problem that came out was the qucik seach function. The mixin overwrites it so that when you are seaching for digits,
+it looks for the ref rather then the PK or other fields. For tickets we want to seach for the ref.
+
+So I tried to overwrite the inheritance of it, however since it's a class method there were issues by asigning the method
+with the dd.model method or calling the dd.model method, since it's looking for the class's attributes, and you can't
+pass in a different class.
+
+My solution was to pass in some kwags that are used in case there is no cls.quick_search_fields.
+
+After writing some code seen below, the solution was to call super with the inherited class that you want to go 'from'::
+
+    class A(object):
+        text = None
+
+        @classmethod
+        def more_text(cls, more ):
+            print cls.text + more
+
+
+    class B(A):
+
+        def important_stuff(self,):
+            print "important stuff"
+
+        @classmethod
+        def more_text(cls, more):
+            print "unwanted code"
+            super(B, cls).more_text(more)
+
+    class C(A):
+
+        @classmethod
+        def more_text(cls, more):
+            print cls.text + " Mother"
+            super(C, cls).more_text(more)
+
+    class Z(B,C):
+        text = "hello"
+
+        @classmethod
+        def more_text(cls, more):
+
+            super(B, cls).more_text(more)
+
+    Z.important_stuff()
+    Z.more_text(" world")
+
+    >>> important_stuff
+    >>> hello mother
+    >>> hello world
+
+
+
+Dupe
+----
+Looked at how lino allows models to be duplicated.
+
+

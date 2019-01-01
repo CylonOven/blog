@@ -1,0 +1,15 @@
+:date: 2017-03-19
+
+======================
+Sunday, March 19, 2017
+======================
+
+I began my lino dev blog.
+
+I'll use this to keep track of my learning of lino and everything related to it.
+
+So far the blog is live, however very ugly.
+
+Next step would be to continue reading the Sphinx guides to learn how write using the .rst markup.
+
+Afterwards to style the blog itself. 

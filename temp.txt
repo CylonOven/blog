@@ -1,0 +1,32 @@
+This is a new test of the Das keyboard Ultimate 4.
+
+Previosly it was having an unusual falt. Sometimes when releasing a key the computer would not register the key-up event. 
+Causing the computer to think the key was held down when it wasn't. Very annoying, expessialy when the key is a modifer like CTRL or ALT.
+So when you would alt-tab away the alt would be held,cauing all sorts of odd behavior. 
+
+I pulled the whole keyboard apart to try to find the issue, also fixed the alt key, as it was not working.
+The alt key had corroded together, making it not work at all. I opened it up and cleaned it, however I think in bending the bits I somehow messed it up as it doesn't click anymore.
+If it bothers me I'll switch it out with a new one or with a unused key such as print-screen or something. 
+
+After cleaning it all over with alcohol, including the PCB, (which caused the volume nob to get a but gunky) testing the switching during falut (They were open), and putting it back together it still didn't work right.
+
+Next day I spent a long time looking for a new keyboard. 
+
+I found the GENESIS RX85 keyboard with Blue knock-off chery switches. for 58 EUR on ArvuITark.
+It's a full size board with a volume knob and backlighting. 
+
+But I was curious to see if the Das didn't work right on the laptop too. 
+
+So I set it up and tried... Nope, no problems. 
+Reboot Pluto and plugged it back in... no more problems.
+
+Aaaaaa
+
+Why didn't I think of rebooting sooner? Aaaaaa. 
+
+Two new rules for myself.
+
+1. When a device gets wet; remove all power sources asap. 
+2. If Pluto or any computer has a odd problem... reboot... 
+
+

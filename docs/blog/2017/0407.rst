@@ -1,0 +1,9 @@
+:date: 2017-04-07
+
+=====================
+Friday, April 7, 2017
+=====================
+
+Travis
+======
+After fighting travis and python3 I got book

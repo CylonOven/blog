@@ -1,0 +1,19 @@
+:date: 2017-04-01
+
+=======================
+Saturday, April 1, 2017
+=======================
+
+Added a crontab that copies my spam folder to SR and has spamassasin learn from the mailbox::
+    $ scp /home/tonis/.thunderbird/r6zecrb3.default/Mail/mail.saffre-rumma-2.net/Trash.sbd/Spam saffre-rumma.net:/home/tonis; ssh saffre-rumma.net sa-learn --spam --mbox Spam -D
+
+Mailbox
+=======
+
+Spam...
+I don't want messages that include SA's spam subject to be entered into the databace, however due to the logic of
+django mail if the enter condition is not met, that message is just skipped not deleted. So I believe I have to use a different method.
+
+I'm thinking of injecting a new field into messages bool:spam, and on entery mark it as such, then every week delete messages that are spam or just have an action
+
+Injecting failed, I beleive it's because it's not a virtual field

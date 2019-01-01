@@ -1,0 +1,105 @@
+:date: 2019-01-01
+
+========================
+Tuesday, January 1, 2019
+========================
+
+Mew years!
+
+Spent it at Karina and Martins. sauna and cozy living.
+
+Last year had been intereating. 
+Got married, watched and helped Nora grow.
+Shes really become a little person complete with her own perks.
+
+Made some resolutions this year.
+
+Resoutions
+==========
+
+In no partular oder
+
+Eat less meat
+-------------
+
+Siiri has been a non meat eater for as long as ive known her.
+The idea of eating no meat is not scary any more.
+
+I hope it makes me cook more good food for the Fam.
+Baked paprika and suvi korvits and quinwa!
+
+
+Blog more
+---------
+
+I enjoy writing in my notebook but havent done it in a while.
+I think I should try to do it more online. Document some of the interesting provlems that I've solved for Lino. or jusy some bits and bobs.
+
+Hell also could do some photo blogging. efforts into uaing a dslr to acan for example. 
+
+Being more ative on Stack Overflow has been fun, why not more online creatice  activy.
+
+figure out what i want from my blog.
+------------------------------------
+
+I habe this blog. however the format is an iffy one.
+Rest is a great format. And allows me to store the posts in a good way that can be searched easy.
+
+however there are skme drawbacks. need to look and see what i eant drom my website.
+
+i would like to style it myself as an excersise in css / sass
+
+Be more goal oriented.
+----------------------
+
+todo lists work for me fairly well when i use them to break down a problem.  Latest exanple being linoReact.
+
+Model train set
+===============
+
+Siiri got from ikea a small wooden trainset. it consists of 12 30deg track 2 strate tracks and 2 strate tracks which change the z level.
+also 3 trains, two engines amd a cargo car. along with a tunnel / bridle suporte.
+
+Its a fun toy. works well with the mega blocks to create intereaing landscapes.
+
+however it feels like it needs some more tracks.
+
+Also it would ne wicked cool to create a battery powered train that will just go around.
+
+Double points for using a ir or rf controller to controll its direction.
+
+Blutooth on Ubuntu.
+===================
+
+Got a cute little ThinkPad bluetooth mouse from Erik along with a small bluetooth adapter.
+First time using a bluetooth device on Pluto.
+
+Had to install blueman along with some other tools.
+
+`sudo apt-get install blueman bluetooth bluez bluez-tools rfkill`
+
+Now it works nicly using the gui provided by blueman.
+
+I hope the AnnePro2 will also work nicely.
+
+Blog Hosting
+============
+
+Decided not to host my blog on saffe-rumma, but on lbox.
+
+I think tonis.piip.org is a good url for it.
+
+In the future if I want to get a new domain I can always get tonispiip.org/com.
+
+VPN issues
+==========
+
+Trying to create an alias for starting my vpn to oru and start a ssh session.
+
+``sudo openvpn tonis_mercury.conf 2>/dev/null 1>&2 && ssh 192.168.73.1``
+
+However there are being some complications. It times out on the ssh.
+Clearly something is wrong, and even if I do the usual operations of not having them in the alias it's hanging, and last connection my session freezed and I had to exit it using ``[ret]\`.``
+
+I'm going to leave it alone for now, rather focusing on the blog.
+

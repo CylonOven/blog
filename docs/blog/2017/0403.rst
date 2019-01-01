@@ -1,0 +1,58 @@
+:date: 2017-04-03
+
+=====================
+Monday, April 3, 2017
+=====================
+
+Mailbox@jane
+============
+Did a HO with luc where we discussed where I was with mailbox and maildev.
+Mailbox for jane is working in a way, however the extension of a django application has some issues that are above my
+skill level. Mainly that it's impossible to inject new fields and actions into a django model since the function django2lino
+is run too late in the startup of a lino server.
+I was able to hack it in a way by modifying the source of django_mailbox to have the models inhertit from lino rather than django.
+With that hack I was able to add a new bool field, but not a new foreign key. Luc wishes to modify lino to make it possible to inject the new field.
+I agree, and pass the job onto luc.
+
+Getting a hacked version of django_radicale also got to a half-way point, where the server started inside of lino.
+But it was not able to run properly, with put requests hanging and timing out.
+
+I wonder if perhaps we ought to just write a auth and storage module for radicale and not have it run inside of lino.
+Just have a new-view for it. But ideally it would be best for it to work.
+
+After fighting with these tasks for a few days I'm glad to move onto something else.
+
+Mailman
+=======
+:ticket:`1598` becomes a problem again as the web-interface isn't allowing the admin to remove held messages.
+
+Previously I was able to just remove the offending mail manually, but this time I must fix the cause of the reason.
+
+Seems the issue was caused by switching to ssl. The admin page was configured to send the POST to http not https,
+resulting in the data being lost.
+
+Solution can be found in the ticket.
+
+git-kraken
+==========
+During our hangout :ticket:`1667` was created, where we want to find out if we are actually able to use git-kraken or not.
+Their website it can be used for open-source projects for free, but if you are using it commercially it must be pro.
+
+We are writing open-source but are getting paid to do so, so are we able to or not.
+
+dtgraph
+=======
+After trying again to get dtraph working on lbox I find that it is impossible to have it work with php7, and we do
+not want to have the server downgrated to php5.2
+
+We shall instead ditching it and feeding the data from the one-wires to emoncms useing ajax requests or something.
+
+Found info for installing emoncms and forwarded it to Erik. Once he conferms that that is what he wants I'll go ahead and
+install it. I think it'll be best to just write a quick python script for logging the data rather than using the php one.
+
+Emoncms
+=======
+
+Using `this <https://github.com/emoncms/emoncms/blob/master/docs/LinuxInstall.md>`_ guide I'm going to try to install emoncs again
+Installed OK.
+Wrote a quick script using requests and systemcall to send the temp data.

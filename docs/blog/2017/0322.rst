@@ -1,0 +1,33 @@
+:date: 2017-03-22
+
+=========================
+Wednesday, March 22, 2017
+=========================
+
+Today me and the fiance visted Naguuus to inspect and put a down-payment for our baby stroller.
+
+=======
+Mailman
+=======
+A message that I piped into the alias for mailman's test mailing list got stuck in holding.
+Had to manually discard the message using
+
+$ cd /var/lib/mailman; bin/discard data/heldmsg-test-1.pck
+
+==============
+Django Mailbox
+==============
+Made new aliases for each mail-account on SR
+tonis: tonis jane
+So that messages are dilivered to both me and the server.
+
+Added 'delete_instance' to LINO_MODEL_ATTRIBS.
+
+It seems that postfix switches to a nobody user when appending to mboxes, but since jane's sheduleer is being run as www-data it couldn't flush the mailbox
+
+By running
+$ sudo -u www-data -s /bin/bash -c '/usr/local/python/lino_sites/jane/env/bin/python /usr/local/python/lino_sites/jane/manage.py shell'
+I am able to act as www-data for testing.
+
+Looks as if the mbox for jane must be set to 666 to allow postfix to append mail sadly. But since jane will be removing them right after it shoudn't be an issue.
+
