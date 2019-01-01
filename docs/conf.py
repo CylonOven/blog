@@ -60,8 +60,11 @@ exclude_patterns = [
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+import alabaster
 
-html_style = 'default.css'
+html_theme_path = [alabaster.get_path()]
+extensions += ['alabaster']
+html_theme = 'alabaster'
 
 html_title = u"Tonis's dev blog"
 
