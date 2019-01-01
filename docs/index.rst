@@ -1,6 +1,6 @@
-===========
-John's blog
-===========
+============
+Tonis's blog
+============
 
 Welcome to my developer blog.
 

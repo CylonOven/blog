@@ -36,8 +36,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u"John's blog"
-copyright = u'2014-2016 John Doe'
+project = u"Tonis's blog"
+copyright = u'2017 Tonis'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -63,7 +63,7 @@ pygments_style = 'sphinx'
 
 html_style = 'default.css'
 
-html_title = u"John's developer blog"
+html_title = u"Tonis's dev blog"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -90,7 +90,7 @@ html_sidebars = {
 
 if lino:
     extlinks.update(srcref=(lino.srcref_url, ''))
-    extlinks.update(ticket=('http://trac.lino-framework.org/ticket/%s', '#'))
+    extlinks.update(ticket=('http://jane.saffre-rumma.net/api/ticket/%s', '#'))
 
 autosummary_generate = True
 
