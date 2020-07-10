@@ -4,7 +4,7 @@
 Tuesday, January 1, 2019
 ========================
 
-Mew years!
+New years!
 
 Spent it at Karina and Martins. sauna and cozy living.
 
@@ -101,5 +101,11 @@ Trying to create an alias for starting my vpn to oru and start a ssh session.
 However there are being some complications. It times out on the ssh.
 Clearly something is wrong, and even if I do the usual operations of not having them in the alias it's hanging, and last connection my session freezed and I had to exit it using ``[ret]\`.``
 
-I'm going to leave it alone for now, rather focusing on the blog.
+Seems that the issue is from having backround instances of openvpn running and it now being able to set the correct routes.
+
+Due to having to use ttl to input my su pasword and the fuss that's created from that by having the whole command be a one liner, dicded to go with with two seperate commands. ``oru`` to start the openvpn, then ``lbox`` for ssh, in the usual pattern.
+
+
+
+
 
